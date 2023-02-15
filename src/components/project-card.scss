@@ -1,0 +1,21 @@
+@import '../styles/colors';
+
+.project-card{
+
+    img{
+        width: 100%;
+        object-fit: contain;
+        margin: 0;
+        padding: 0;
+    }
+
+} 
+.skill-btn{
+    background-color: $success;
+    width: fit-content;
+
+    &:hover{
+        cursor: pointer;
+        background-color: lighten($success, 10%);
+    }
+}
