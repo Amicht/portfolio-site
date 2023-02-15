@@ -1,0 +1,19 @@
+
+$light: #e8eddf;
+$blue: #cfdbd5;
+$yellow: #f5cb5c;
+$grey: #333533;
+$dark: #242423;
+$green:#008000;
+$orange:#ffa500;
+$red:#ff0000;
+
+$primary: $blue;
+$secondary: $yellow;
+$success: $grey;
+$danger: $red;
+$info: $green;
+$alert: $orange;
+
+
+@import "~bootstrap/scss/bootstrap";
