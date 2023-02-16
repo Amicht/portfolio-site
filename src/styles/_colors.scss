@@ -1,19 +1,18 @@
 
-$light: #e8eddf;
-$blue: #cfdbd5;
-$yellow: #f5cb5c;
-$grey: #333533;
-$dark: #242423;
-$green:#008000;
-$orange:#ffa500;
-$red:#ff0000;
+$light: #BDD9BF;
+$color1: #2E4052;
+$color2: #FFC857;
+$red:#e63946;
 
-$primary: $blue;
-$secondary: $yellow;
-$success: $grey;
-$danger: $red;
-$info: $green;
-$alert: $orange;
+$dark: #001524;
 
+$primary: $color1;
+$secondary: $light;
+$info: $color2;
+
+$primary-bg-gardient: linear-gradient(175deg, $primary ,darken($primary, 10%));
+$primary-card-bg-gardient: linear-gradient(90deg, $primary ,darken($primary, 10%));
+$secondary-bg-gardient: linear-gradient(175deg, $secondary ,darken($secondary, 10%));
+$light-bg-gardient: linear-gradient(90deg, darken($light, 10%), $light);
 
 @import "~bootstrap/scss/bootstrap";

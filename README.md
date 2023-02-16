@@ -16,3 +16,7 @@
 
 - Animations on scroll:
     - `aos`
+- Intro shape generator:
+    - `https://www.shapedivider.app/`
+- Skills Icons:
+    - https://devicon.dev/
