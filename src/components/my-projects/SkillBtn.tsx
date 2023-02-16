@@ -1,15 +1,19 @@
-import React from 'react'
+import './skill-btn.scss'
+
+
 interface Props{
     skillWordChangeHndler: (skill:string) => void;
     skillName: string;
     match:number
+    isActive:boolean
 }
 
-const SkillBtn = ({skillName,skillWordChangeHndler,match}: Props) => {
+const SkillBtn = ({skillName,skillWordChangeHndler,match, isActive}: Props) => {
     
   return (
     <div 
-        className='mx-2 mt-2 col-2 px-1 text-light skill-btn'
+        className={`px-1 col-1 mx-2 px-1 btn skill-btn 
+          ${isActive? 'btn-secondary':'btn-primary'}`}
         onClick={() => skillWordChangeHndler(skillName)} >
             {`${skillName} (${match})`}
     </div>
