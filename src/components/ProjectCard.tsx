@@ -3,7 +3,9 @@ import { ProjectModel } from '../models/ProjectModel';
 import CardLinksBtns from './my-projects/CardLinksBtns';
 import CardSkillsInfo from './my-projects/CardSkillsInfo';
 import CardTitlesSection from './my-projects/CardTitlesSection';
-import './project-card.scss'
+import './project-card.scss';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 
 const ProjectCard = ({description, git_url,image,name,site_url,tools}:ProjectModel) => {
@@ -13,11 +15,15 @@ const ProjectCard = ({description, git_url,image,name,site_url,tools}:ProjectMod
         {link: git_url, txt: "code"},
         {link: site_url, txt: "site"}
     ]
+
+    
     
 
     return (
-    <div className='col-md-6 text-center mb-3'>
-        <div className='px-0 project-card pb-3'>
+    <div data-aos="fade-up" 
+        data-aos-duration="1200"
+        className='col-lg-4 col-sm-6 text-center mb-3'>
+        <div className='px-0 project-card pb-5 mb-5'>
             
             <img 
                 className='mx-0' 
@@ -37,7 +43,10 @@ const ProjectCard = ({description, git_url,image,name,site_url,tools}:ProjectMod
             <CardLinksBtns 
                 urlLinks={urlLinks} 
                 key="card-link-btns"/>
+
+            
         </div>
+        
     </div>
   )
 }

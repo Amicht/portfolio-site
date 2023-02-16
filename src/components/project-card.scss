@@ -2,8 +2,9 @@
 
 .project-card{
 
+    position: relative;
     background-image: $primary-card-bg-gardient;
-
+    height: 100%;
     a{
         text-decoration: none;
     }
@@ -39,6 +40,17 @@
             transform: scaleX(1);
             transform-origin: bottom left;
           }
+    }
+
+    .card-skill-info{
+      font-size: 10px;
+    }
+    .card-links-btns{
+      font-size: 30px;
+      position: absolute;
+      bottom: 30px;
+      left: 20%;
+      right: 20%;
     }
 
 } 
