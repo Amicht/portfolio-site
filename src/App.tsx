@@ -6,15 +6,19 @@ import MyProjects from './components/my-projects/MyProjects';
 import MyFooter from './components/my-footer/MyFooter';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
+import IntroSection from './components/intro-section/IntroSection';
+import SkillsSection from './components/skills/SkillsSection';
 
 function App() {
 
   React.useEffect(() => { AOS.init()},[]);
 
   return (
-    <div className="container">
-      <MyProjects key={"projects"}/>
-      <MyFooter />
+    <div className="">
+        <IntroSection />
+        <SkillsSection />
+        <MyProjects key={"projects"} />
+        <MyFooter />
     </div>
   );
 }
