@@ -1,5 +1,5 @@
 import { ProjectModel } from '../models/ProjectModel'
-import {techTools}  from './tools'
+import {techTools}  from './techTools'
 
 
 export const projects:ProjectModel[] = [
