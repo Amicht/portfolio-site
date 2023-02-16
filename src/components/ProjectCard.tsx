@@ -1,26 +1,42 @@
 import React from 'react';
 import { ProjectModel } from '../models/ProjectModel';
+import CardLinksBtns from './my-projects/CardLinksBtns';
+import CardSkillsInfo from './my-projects/CardSkillsInfo';
+import CardTitlesSection from './my-projects/CardTitlesSection';
 import './project-card.scss'
 
 
 const ProjectCard = ({description, git_url,image,name,site_url,tools}:ProjectModel) => {
   
+    const skills = [tools[0], tools[1], `+${tools.length - 2} more`];
+    const urlLinks = [
+        {link: git_url, txt: "code"},
+        {link: site_url, txt: "site"}
+    ]
     
+
     return (
-    <div className='col-md-6 text-center project-card'>
-        <img className='mx-1' src={'/images/' + image} alt={image + ' image'}/>
-        <h2 className='my-3'>{name}</h2>
-        <p>
-            <span className='fs-5'>{description}</span>
-            <br/><br/>
-            <span className='mt-2 fs-6'>
-                <span className='text-info fw-bold'>tools: </span>
-                {tools.join((', '))}
-            </span>
-        </p>
-        <div className='mt-3 mb-2 mx-3 d-flex alugn-items'>
-            <a className="me-auto p-2" href={git_url}>code </a>
-            <a className='p-2' href={site_url}>site </a>
+    <div className='col-md-6 text-center mb-3'>
+        <div className='px-0 project-card pb-3'>
+            
+            <img 
+                className='mx-0' 
+                src={'/images/' + image} 
+                alt={image + ' image'} />
+            
+            <CardSkillsInfo 
+                skills={skills} 
+                key={"card-skills"} />
+
+            <CardTitlesSection 
+                name={name}
+                description={description}
+                key="CardTitlesSection"/>
+            
+
+            <CardLinksBtns 
+                urlLinks={urlLinks} 
+                key="card-link-btns"/>
         </div>
     </div>
   )
