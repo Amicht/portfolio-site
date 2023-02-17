@@ -24,9 +24,10 @@ const SkillsSection = () => {
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
     ]
   return (
-    <section className='bg-primary skills-section py-5'>
+    <section className='bg-secondary skills-section py-5 text-primary'>
+
         <div className='container py-5 text-center'>
-        <h3 className='py-3 fs-1'>Languages and Tools:</h3>
+        <h3 className='fs-1'>Languages and Tools:</h3>
 
             <div className='row py-2'>
                 {svgs.map((svg, idx) => 
@@ -38,6 +39,12 @@ const SkillsSection = () => {
                         alt={svg} />
                 </div>)}
             </div>
+        </div>
+
+        <div className="custom-shape-divider-top-1676596703">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" className="shape-fill"></path>
+            </svg>
         </div>
     </section>
   )

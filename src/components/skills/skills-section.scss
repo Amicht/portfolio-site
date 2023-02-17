@@ -1,8 +1,42 @@
+@import '../../styles/colors';
 
 .skills-section{
-
+    
+    position: relative;
+    height: fit-content;
+    min-height: 100vh;
+    
+    h3{
+        padding-top: 200px;
+    }
 
     img{
         height: 80px;
     }
+    z-index: 3;
+
+    .custom-shape-divider-top-1676596703 {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .custom-shape-divider-top-1676596703 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 195px;
+        transform: rotateY(180deg);
+    }
+    
+    .custom-shape-divider-top-1676596703 .shape-fill {
+        fill: #2E4052;
+    }
+
+
+
 }

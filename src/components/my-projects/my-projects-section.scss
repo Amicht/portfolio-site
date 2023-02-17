@@ -3,5 +3,28 @@
 
 .my-projects-sction{
     height: fit-content;
+    position: relative;
     background-image: $primary-bg-gardient;
+
+    .custom-shape-divider-top-1676596099 {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .custom-shape-divider-top-1676596099 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 51px;
+        transform: rotateY(180deg);
+    }
+    
+    .custom-shape-divider-top-1676596099 .shape-fill {
+        fill: $secondary;
+    }
 }
