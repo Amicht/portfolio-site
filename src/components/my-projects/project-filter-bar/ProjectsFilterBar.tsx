@@ -1,6 +1,6 @@
 import React from 'react'
-import { projects } from '../../utils/projects';
-import { techTools } from '../../utils/techTools';
+import { projects } from '../../../utils/projects';
+import { techTools } from '../../../utils/techTools';
 import SkillBtn from './SkillBtn';
 
 interface Props{

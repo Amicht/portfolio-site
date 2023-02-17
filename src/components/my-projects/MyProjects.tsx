@@ -1,8 +1,8 @@
 import React from 'react';
 import { ProjectModel } from '../../models/ProjectModel';
 import { projects } from '../../utils/projects';
-import ProjectCard from '../ProjectCard';
-import ProjectsFilterBar from './ProjectsFilterBar';
+import ProjectCard from './project-card/ProjectCard';
+import ProjectsFilterBar from './project-filter-bar/ProjectsFilterBar';
 import './my-projects-section.scss';
 
 const MyProjects = () => {

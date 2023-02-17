@@ -1,8 +1,8 @@
 import React from 'react';
-import { ProjectModel } from '../models/ProjectModel';
-import CardLinksBtns from './my-projects/CardLinksBtns';
-import CardSkillsInfo from './my-projects/CardSkillsInfo';
-import CardTitlesSection from './my-projects/CardTitlesSection';
+import { ProjectModel } from '../../../models/ProjectModel';
+import CardLinksBtns from './CardLinksBtns';
+import CardSkillsInfo from './CardSkillsInfo';
+import CardTitlesSection from './CardTitlesSection';
 import './project-card.scss';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
