@@ -4,7 +4,7 @@ import { projects } from '../../utils/projects';
 import ProjectCard from './project-card/ProjectCard';
 import ProjectsFilterBar from './project-filter-bar/ProjectsFilterBar';
 import './my-projects-section.scss';
-import { sections } from '../../utils/sections';
+import { navBarSections } from '../../utils/sections';
 
 const MyProjects = () => {
 
@@ -28,7 +28,7 @@ const MyProjects = () => {
     }
 
   return (
-    <section id={sections[2].id} className='my-projects-sction py-5'>
+    <section id={navBarSections[1].id} className='my-projects-sction py-5'>
 
       <div className='container'>
         <div data-aos="fade-up"

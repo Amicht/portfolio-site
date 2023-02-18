@@ -1,7 +1,7 @@
 import React from 'react'
 import './intro-section.scss';
 import Typed from 'react-typed';
-import { sections } from '../../utils/sections';
+import { navBarSections } from '../../utils/sections';
 
 const IntroSection = () => {
 
@@ -23,7 +23,7 @@ const IntroSection = () => {
   
 
   return (
-    <section id={sections[0].id}  className='intro-section py-5'>
+    <section  className='intro-section py-5'>
       
       <div className='container text-start text-secondary'>
 

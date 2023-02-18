@@ -1,8 +1,10 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { sections } from '../../utils/sections';
+import { navBarSections } from '../../utils/sections';
 import React from 'react';
+import ContactComponent from '../contact-component/ContactComponent';
+import './my-navbar.css';
 
 function MyNavbar() {
 
@@ -23,16 +25,19 @@ function MyNavbar() {
   return (
     <Navbar bg="light" expanded={expanded} expand="lg" sticky='top'>
       <Container>
-        <Navbar.Brand >AMIT LICHT</Navbar.Brand>
+        <Navbar.Brand onClick={() => window.scrollTo(0,0)} className='text-primary'>AMIT LICHT</Navbar.Brand>
         <Navbar.Toggle onClick={handleExpendedOnClick}  aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse >
           <Nav className="me-auto">
-            {sections.map((sec,idx) => 
+            {navBarSections.map((sec,idx) => 
             <Nav.Link 
               key={sec.id} 
               onClick={() => {handleClickScroll(sec.id)}}>
                 {sec.txt}
             </Nav.Link>)}
+          </Nav>
+          <Nav onClick={handleExpendedOnClick}  className='d-flex container justify-content-end'>
+              <ContactComponent />
           </Nav>
           
         </Navbar.Collapse>

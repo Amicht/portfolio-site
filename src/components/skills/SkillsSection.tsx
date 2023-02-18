@@ -1,5 +1,5 @@
 import React from 'react'
-import { sections } from '../../utils/sections'
+import { navBarSections } from '../../utils/sections'
 import './skills-section.scss'
 
 const SkillsSection = () => {
@@ -28,7 +28,7 @@ const SkillsSection = () => {
     <section className='bg-secondary skills-section py-5 text-primary'>
 
         <div className='container py-5 text-center'>
-        <h3 id={sections[1].id} className='fs-1'>Languages and Tools:</h3>
+        <h3 id={navBarSections[0].id} className='fs-1'>Languages and Tools:</h3>
 
             <div className='row py-2'>
                 {svgs.map((svg, idx) => 
