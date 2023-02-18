@@ -1,14 +1,16 @@
 
-$light: #BDD9BF;
-$color1: #2E4052;
-$color2: #FFC857;
-$red:#e63946;
+$light: #f1faee;
+$color1: #457b9d;
+$color2: #f0df5e;
+$color3: #a8dadc;
+$color4: #1d3557;
 
-$dark: #001524;
 
 $primary: $color1;
 $secondary: $light;
 $info: $color2;
+$red: $color3;
+$dark: $color4;
 
 $primary-bg-gardient: linear-gradient(175deg, $primary ,darken($primary, 10%));
 $primary-card-bg-gardient: linear-gradient(90deg, $primary ,darken($primary, 10%));

@@ -23,7 +23,7 @@ function MyNavbar() {
       };
 
   return (
-    <Navbar bg="light" expanded={expanded} expand="lg" sticky='top'>
+    <Navbar bg='secondary' expanded={expanded} expand="lg" sticky='top'>
       <Container>
         <Navbar.Brand onClick={() => window.scrollTo(0,0)} className='text-primary'>AMIT LICHT</Navbar.Brand>
         <Navbar.Toggle onClick={handleExpendedOnClick}  aria-controls="basic-navbar-nav" />
