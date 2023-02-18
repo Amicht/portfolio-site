@@ -59,7 +59,7 @@ export const projects:ProjectModel[] = [
         ]
     },
     {
-        name: "Snake Game",
+        name: "Snake",
         description: "The classc Snake game",
         image: "snake.png",
         git_url: "https://github.com/Amicht/snake-game",
@@ -72,11 +72,24 @@ export const projects:ProjectModel[] = [
         ]
     },
     {
-        name: "Black-Jack Game",
+        name: "Black-Jack",
         description: "The classc Black-Jack (21) game",
         image: "black-jack.png",
         git_url: "https://github.com/Amicht/Black-Jack-21",
         site_url: "https://amicht.github.io/Black-Jack-21/main.html",
+        tools: [
+            techTools.js,
+            techTools.vanila_js,
+            techTools.html,
+            techTools.css,
+        ]
+    },
+    {
+        name: "Chord Learning App",
+        description: "Learn how to play guitar chords, for beginners and advanced",
+        image: "chord-app.png",
+        git_url: "https://github.com/Amicht/chord-app",
+        site_url: "https://amicht.github.io/chord-app/main.html",
         tools: [
             techTools.js,
             techTools.vanila_js,
