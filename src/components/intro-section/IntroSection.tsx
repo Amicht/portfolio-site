@@ -1,6 +1,7 @@
 import React from 'react'
 import './intro-section.scss';
 import Typed from 'react-typed';
+import { sections } from '../../utils/sections';
 
 const IntroSection = () => {
 
@@ -11,6 +12,7 @@ const IntroSection = () => {
     "Creative Mind",
     "Bass Player",
     "People Person",
+    "Self Motivated",
     "Helper",
     "Challenge Seeker"
   ]
@@ -18,16 +20,10 @@ const IntroSection = () => {
   const strings = info.map(txt =>"\"" + txt + "\"");
 
 
-  const handleClickScroll = () => {
-    const element = document.getElementById('section-2');
-    if (element) {
-      // 👇 Will scroll smoothly to the top of the next section
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  
 
   return (
-    <section id="section-1"  className='intro-section py-5'>
+    <section id={sections[0].id}  className='intro-section py-5'>
       
       <div className='container text-start text-secondary'>
 

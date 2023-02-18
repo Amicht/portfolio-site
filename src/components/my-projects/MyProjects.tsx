@@ -4,13 +4,11 @@ import { projects } from '../../utils/projects';
 import ProjectCard from './project-card/ProjectCard';
 import ProjectsFilterBar from './project-filter-bar/ProjectsFilterBar';
 import './my-projects-section.scss';
+import { sections } from '../../utils/sections';
 
 const MyProjects = () => {
 
-    const txts = {
-      title: "WORK",
-      subtitle: "CHECK OUT MY PROJECTS"
-    }
+    const title = "CHECK OUT SOME OF MY PROJECTS";
 
     const allSkills = "All";
 
@@ -30,14 +28,13 @@ const MyProjects = () => {
     }
 
   return (
-    <section id="section-2" className='my-projects-sction py-5'>
+    <section id={sections[2].id} className='my-projects-sction py-5'>
 
       <div className='container'>
         <div data-aos="fade-up"
             data-aos-duration="1200">
             <div className='text-center my-4'>
-              <h2 className='fs-1'>{txts.title}</h2>
-              <h3 className='fs-3'>{txts.subtitle}</h3>
+              <h2 className='fs-1 py-5'>{title}</h2>
               <ProjectsFilterBar 
                 key={"filter-bar"}
                 skillWordChangeHndler={SkillWordChangeHndler}

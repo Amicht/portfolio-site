@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import IntroSection from './components/intro-section/IntroSection';
 import SkillsSection from './components/skills/SkillsSection';
+import MyNavbar from './components/my-navbar/MyNavbar';
 
 function App() {
 
@@ -15,9 +16,10 @@ function App() {
 
   return (
     <div className="">
+        <MyNavbar />
         <IntroSection />
         <SkillsSection />
-        <MyProjects key={"projects"} />
+        <MyProjects />
         <MyFooter />
     </div>
   );
