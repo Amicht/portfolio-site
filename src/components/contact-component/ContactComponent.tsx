@@ -12,7 +12,7 @@ const ContactComponent = () => {
           icon: "bi bi-github"
         },
         {
-          href: "",
+          href: "https://wa.me/972543209402",
           icon: "bi bi-whatsapp"
         },
       ]
