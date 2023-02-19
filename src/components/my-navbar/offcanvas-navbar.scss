@@ -1,0 +1,13 @@
+.nav-title:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+.close-icon{
+
+    font-size: 30px;
+    
+    &:hover{
+        cursor: pointer;
+        opacity: 0.8;
+    }
+}
