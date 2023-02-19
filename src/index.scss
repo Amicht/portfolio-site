@@ -1,10 +1,12 @@
 @import './styles/colors';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
 }
 body{
+    font-family: 'Roboto Slab', serif;
     height: 100%;
     min-height: 100vh;
     width: 100%;
@@ -12,4 +14,12 @@ body{
     color: $secondary;
     overflow-x: hidden;
     scroll-behavior: smooth;
+}
+
+.btn-primary {
+    @include button-variant($primary, darken($primary, 7.5%), darken($primary, 10%), lighten($primary,5%), lighten($primary, 10%), darken($primary,30%));
+}
+    
+.btn-outline-primary {
+    @include button-outline-variant($primary, #222222, lighten($primary,5%), $primary);
 }
