@@ -22,7 +22,7 @@ const ProjectCard = ({description, git_url,image,name,site_url,tools}:ProjectMod
     return (
     <div data-aos="fade-up" 
         data-aos-duration="1200"
-        className='col-lg-4 col-sm-6 text-center mb-3'>
+        className='col-lg-4 col-sm-6 text-center text-primary mb-3'>
         <div className='px-0 project-card pb-5 mb-5'>
             
             <img 

@@ -19,7 +19,7 @@ const MyFooter = () => {
             <span className="mb-3 mb-md-0">© 2023 Amit Licht</span>
           </div>
 
-          <ContactComponent color={color} />
+          <ContactComponent color={color} alignEnd={true}/>
         </footer>
       </div>
     </section>

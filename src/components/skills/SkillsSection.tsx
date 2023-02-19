@@ -34,7 +34,10 @@ const SkillsSection = () => {
         className='skills-section py-5'>
 
         <div className='container py-5 text-center'>
-        <h3 id={navBarSections[0].id} className='fs-1'>Languages and Tools:</h3>
+        <h3 id={navBarSections[0].id} 
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            className='fs-1'>Languages and Tools:</h3>
 
             <div className='row py-2'>
                 {svgs.map((svg, idx) => 
