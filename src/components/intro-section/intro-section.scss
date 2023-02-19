@@ -11,23 +11,14 @@ section{
     height: 60vh;
     width: 100%;
     max-width: 100vw;
-    background-color: $primary;
 
     .typed-txt{
         color: $red;
     }
 
     h1{
-        color: $secondary;
         font-size: 70px!important;
         font-weight: bold!important;
-        font-family: monospace;
-        letter-spacing: 7px!important;
-        cursor: pointer;
-        background: linear-gradient(to right, $secondary 0, $dark 10%, $secondary 20%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: shine 6s infinite linear;
     }
     .go-down-btn{
         position: relative;
@@ -35,18 +26,6 @@ section{
         font-size: 50px;
         width: fit-content;
     }
-
-    @keyframes shine {
-        0% {
-          background-position: 0;
-        }
-        60% {
-          background-position: 600px;
-        }
-        100% {
-          background-position: 600px;
-        }
-      }
     
     
 }

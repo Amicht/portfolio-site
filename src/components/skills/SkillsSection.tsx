@@ -1,8 +1,11 @@
 import React from 'react'
+import { ThemeCtxt } from '../../context/ThemeCtxt';
 import { navBarSections } from '../../utils/sections'
 import './skills-section.scss'
 
 const SkillsSection = () => {
+
+    const {light: {backgroundColor,color}} = React.useContext(ThemeCtxt);
 
     const svgs = [
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg",
@@ -24,8 +27,11 @@ const SkillsSection = () => {
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original-wordmark.svg",
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
     ]
+
   return (
-    <section className='bg-secondary skills-section py-5 text-primary'>
+    <section 
+        style={{backgroundColor, color}}
+        className='skills-section py-5'>
 
         <div className='container py-5 text-center'>
         <h3 id={navBarSections[0].id} className='fs-1'>Languages and Tools:</h3>
@@ -42,9 +48,9 @@ const SkillsSection = () => {
             </div>
         </div>
 
-        <div className="custom-shape-divider-top-1676596703">
+        <div className="custom-shape-divider-top-1676596703 ">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" className="shape-fill"></path>
+                <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" style={{fill:color}} className="shape-fill bg-primary"></path>
             </svg>
         </div>
     </section>

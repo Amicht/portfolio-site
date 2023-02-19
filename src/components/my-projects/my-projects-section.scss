@@ -4,7 +4,6 @@
 .my-projects-sction{
     height: fit-content;
     position: relative;
-    background-image: $primary-bg-gardient;
 
     .custom-shape-divider-top-1676596099 {
         position: absolute;
@@ -24,7 +23,5 @@
         transform: rotateY(180deg);
     }
     
-    .custom-shape-divider-top-1676596099 .shape-fill {
-        fill: $secondary;
-    }
+    
 }

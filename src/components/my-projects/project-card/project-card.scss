@@ -5,6 +5,10 @@
     position: relative;
     background-image: $primary-card-bg-gardient;
     height: 100%;
+    border-radius: 5%;
+    h2{
+      color: $red;
+    }
     a{
         text-decoration: none;
     }

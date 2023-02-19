@@ -1,6 +1,10 @@
 import React from 'react'
 
-const ContactComponent = () => {
+interface Props{
+  color?: string
+}
+
+const ContactComponent = ({color}: Props) => {
 
     const icons = [
         {
@@ -20,11 +24,11 @@ const ContactComponent = () => {
   return (
     <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
         {icons.map((icn) => <li key={icn.href} className="ms-3" >
-            <a className="text-muted" 
+            <a 
             href={icn.href}
             target="_blank"
             rel="noreferrer">
-                <i className={icn.icon} style={{width:"30", height:"24"}}></i>
+                <i className={icn.icon} style={{color, width:"30", height:"24"}}></i>
             </a>
         </li>)}
     </ul>
