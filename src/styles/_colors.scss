@@ -1,19 +1,19 @@
 
-$light: #f1faee;
-$color1: #457b9d;
-$color2: #f0df5e;
+$light: #FFFFFF;
+$color1: #FFD000;
+$color2: #160559;
 $color3: #a8dadc;
-$color4: #1d3557;
+$color4: #0F003D;
 
 
-$primary: $color1;
-$secondary: $light;
-$info: $color2;
-$red: $color3;
+$primary: $light;
+$secondary: $color4;
+$info: $color1;
+
 $dark: $color4;
 
 $primary-bg-gardient: linear-gradient(175deg, $primary ,darken($primary, 10%));
-$primary-card-bg-gardient: linear-gradient(90deg, $primary ,darken($primary, 10%));
+$primary-card-bg-gardient: linear-gradient(90deg, $color2 ,darken($color2, 10%));
 $secondary-bg-gardient: linear-gradient(175deg, $secondary ,darken($secondary, 10%));
 $light-bg-gardient: linear-gradient(90deg, darken($light, 10%), $light);
 
