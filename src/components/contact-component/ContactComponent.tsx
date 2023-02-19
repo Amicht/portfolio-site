@@ -2,9 +2,10 @@ import React from 'react'
 
 interface Props{
   color?: string
+  alignEnd?: boolean
 }
 
-const ContactComponent = ({color}: Props) => {
+const ContactComponent = ({color,alignEnd}: Props) => {
 
     const icons = [
         {
@@ -22,8 +23,8 @@ const ContactComponent = ({color}: Props) => {
       ]
       
   return (
-    <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-        {icons.map((icn) => <li key={icn.href} className="ms-3" >
+    <ul className={`nav col-md-4 list-unstyled d-flex ${alignEnd?"justify-content-end": ""}`}>
+        {icons.map((icn) => <li key={icn.href} className="me-3" >
             <a 
             href={icn.href}
             target="_blank"

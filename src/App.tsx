@@ -8,8 +8,8 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import IntroSection from './components/intro-section/IntroSection';
 import SkillsSection from './components/skills/SkillsSection';
-import MyNavbar from './components/my-navbar/MyNavbar';
 import { ThemeCtxt, themes } from './context/ThemeCtxt';
+import OffCanvasNavbar from './components/my-navbar/OffcanvasNavbar';
 
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
     <div className="">
       <ThemeCtxt.Provider value={theme}>
 
-        <MyNavbar chngeThemeHndler={changeTheme}/>
+        <OffCanvasNavbar chngeThemeHndler={changeTheme}/>
         <IntroSection />
         <SkillsSection />
         <MyProjects />

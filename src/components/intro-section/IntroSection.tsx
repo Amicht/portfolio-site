@@ -21,6 +21,13 @@ const IntroSection = () => {
   const aboutMe = 'aboutMe='
   const strings = info.map(txt =>"\"" + txt + "\"");
 
+  const handleClickScroll = (sectionId:string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section style={{backgroundColor,color}} 
       className='intro-section py-5'>
@@ -43,7 +50,8 @@ const IntroSection = () => {
 
           
           <div className='mt-5 mb-5 go-down-btn text-info px-1 mx-auto'>
-              <i className="fa fa-arrow-down"></i>
+              <i onClick={() => handleClickScroll(navBarSections[0].id)} 
+                className="fa fa-arrow-down"></i>
           </div>
       </div>
 
