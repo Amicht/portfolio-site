@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { ThemeCtxt } from '../../context/ThemeCtxt';
@@ -10,22 +10,22 @@ import { Fade as Hamburger } from 'hamburger-react'
 
 interface Props{
     chngeThemeHndler: () => void
+    setScrollTo: (value: React.SetStateAction<string>) => void
 }
 
 
-const OffCanvasNavbar = ({chngeThemeHndler}:Props) => {
+const OffCanvasNavbar = ({chngeThemeHndler,setScrollTo}:Props) => {
     const {dark: {backgroundColor,color}} = React.useContext(ThemeCtxt);
     const [show, setShow] = useState(false);
+    
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
+    const handleShow = () => {setShow(true)};
 
-  const handleClickScroll = (sectionId:string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const onSectionClick = (sectionId:string) => {
+      setScrollTo(sectionId);
+      setTimeout(() => handleClose(), 200);
     }
-  };
 
   return (
     <section style={{backgroundColor, color}} className="py-1 sticky-top">
@@ -47,7 +47,7 @@ const OffCanvasNavbar = ({chngeThemeHndler}:Props) => {
         <Offcanvas.Body >
 
         {navBarSections.map((sec,idx) => 
-            <div onClick={() =>{handleClickScroll(sec.id)}}
+            <div onClick={() =>{onSectionClick(sec.id)}}
                 className='my-2 nav-title'
               style={{color}}
               key={sec.id} >
