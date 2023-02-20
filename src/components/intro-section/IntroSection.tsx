@@ -10,7 +10,7 @@ const IntroSection = () => {
   const title = "Amit Licht";
   const info = [
     "Web Developer",
-    "Passionate Pragrommer",
+    "Passionate Programmer",
     "Creative Mind",
     "Bass Player",
     "People Person",
