@@ -4,7 +4,7 @@ import ContactComponent from '../contact-component/ContactComponent'
 import './my-footer.scss'
 
 const MyFooter = () => {
-  const {dark: {backgroundColor,color}} = React.useContext(ThemeCtxt);
+  const {light: {backgroundColor,color}} = React.useContext(ThemeCtxt);
   
 
 
