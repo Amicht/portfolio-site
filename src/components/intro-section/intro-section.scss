@@ -32,6 +32,44 @@ section{
             opacity: 0.9;
         }
     }
+
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: $info;
+      }
+      
+      .hover-underline-animation::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 4px;
+        bottom: 0;
+        left: 0;
+        background-color: $info;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+    
+      .intro-navs{
+        z-index: 4;
+        font-size: 30px;
+        position: relative;
+        width: fit-content;
+        &:hover{
+            cursor: pointer;
+            opacity: 0.9;
+        }
+        &:hover{
+          .hover-underline-animation::after {
+              transform: scaleX(1);
+              transform-origin: bottom left;
+            }
+        }
+    }
+
+
     
     
 }
