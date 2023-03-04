@@ -1,0 +1,34 @@
+@import '../../styles/colors';
+
+
+.about-section{
+
+    position: relative;
+    height: fit-content;
+    min-height: 100vh;
+
+    .portfolio-img{
+        max-height: 250px;
+        max-width: 250px;
+        border-radius: 50%;
+        object-fit: contain;
+    }
+
+    .custom-shape-divider-top-1676596099 {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .custom-shape-divider-top-1676596099 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 51px;
+        transform: rotateY(180deg);
+    }
+}

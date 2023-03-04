@@ -10,22 +10,24 @@ import IntroSection from './components/intro-section/IntroSection';
 import SkillsSection from './components/skills/SkillsSection';
 import { ThemeCtxt, themes } from './context/ThemeCtxt';
 import OffCanvasNavbar from './components/my-navbar/OffcanvasNavbar';
+import AboutSection from './components/about-section/AboutSection';
 
 
 function App() {
 
-  const [theme, setTheme] = React.useState(themes);
+  const [theme, setTheme] = React.useState({dark: themes.light, light:themes.dark});
   const [isChecked, setIsChecked] = React.useState(false);
   const [scrollTo, setScrollTo] = React.useState("");
 
+  const aboutRef = React.useRef();
   React.useEffect(() => { AOS.init()},[]);
   
   const changeTheme = () => {
     if(isChecked) {
-      setTheme(themes)
+      setTheme({dark: themes.light, light:themes.dark})
     }
     else{
-      setTheme({dark: themes.light, light:themes.dark});
+      setTheme(themes);
     }
     setIsChecked(!isChecked)
   }
@@ -33,7 +35,7 @@ function App() {
   const handleClickScroll = (sectionId:string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({});
+      element.scrollIntoView();
     }
   };
 
@@ -43,7 +45,7 @@ function App() {
   },[scrollTo])
 
   return (
-    <div className="">
+    <>
       <ThemeCtxt.Provider value={theme}>
 
         <OffCanvasNavbar 
@@ -51,10 +53,11 @@ function App() {
           setScrollTo={setScrollTo}/>
         <IntroSection />
         <SkillsSection />
+        <AboutSection />
         <MyProjects />
         <MyFooter />
       </ThemeCtxt.Provider>
-    </div>
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
 export const navBarSections = [
-    {txt: "skills", id: "skills-section"},
-    {txt: "projects", id: "projects-section"},
-    // {txt: "about", id: "about-section"}
+    {txt: "Skills", id: "skills-section"},
+    {txt: "Who am I?", id: "about-section"},
+    {txt: "Projects", id: "projects-section"},
 ];
