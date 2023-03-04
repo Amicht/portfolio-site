@@ -9,7 +9,7 @@ import { ThemeCtxt } from '../../context/ThemeCtxt';
 
 const MyProjects = () => {
 
-    const {dark: {backgroundColor,color}} = React.useContext(ThemeCtxt);
+    const {light: {backgroundColor,color}} = React.useContext(ThemeCtxt);
     const title = "CHECK OUT SOME OF MY PROJECTS";
     const allSkills = "All";
 
@@ -31,7 +31,7 @@ const MyProjects = () => {
   return (
     <section 
       style={{backgroundColor, color}}
-      id={navBarSections[1].id} 
+      id={navBarSections[2].id} 
       className='my-projects-sction py-5'>
 
       <div className='container'>

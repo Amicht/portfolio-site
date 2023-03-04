@@ -5,6 +5,7 @@
     position: relative;
     height: fit-content;
     min-height: 100vh;
+    z-index:1;
     
     h3{
         padding-top: 200px;
@@ -13,11 +14,9 @@
     img{
         height: 80px;
     }
-    z-index: 3;
 
     .custom-shape-divider-top-1676596703 {
         position: absolute;
-        z-index: 0;
         top: 0;
         left: 0;
         width: 100%;

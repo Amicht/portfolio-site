@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import React, {  useState } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { ThemeCtxt } from '../../context/ThemeCtxt';
 import { navBarSections } from '../../utils/sections';
@@ -7,6 +6,7 @@ import ContactComponent from '../contact-component/ContactComponent';
 import './costum-switch.scss';
 import './offcanvas-navbar.scss';
 import { Fade as Hamburger } from 'hamburger-react'
+
 
 interface Props{
     chngeThemeHndler: () => void
@@ -30,34 +30,39 @@ const OffCanvasNavbar = ({chngeThemeHndler,setScrollTo}:Props) => {
   return (
     <section style={{backgroundColor, color}} className="py-1 sticky-top">
     <div className='container d-flex justify-content-end'>
-      <div onClick={handleShow} >
+    <div  className='d-flex container my-auto fs-3 ms-0 ps-0' >
+        <ContactComponent color={color} />
+    </div>
+      <label className="costum-switch my-2 px-4" >
+        <input type="checkbox" onClick={chngeThemeHndler} />
+        <span style={{backgroundColor:color}} className="slider round"></span>
+      </label>
+      {/* <div onClick={handleShow} >
         <Hamburger size={36} toggled={show}/>
-      </div>
-      <Offcanvas show={show} onHide={handleClose} style={{backgroundColor}}>
+      </div> */}
+
+      {/* <Offcanvas show={show} onHide={handleClose} style={{backgroundColor}}>
         <Offcanvas.Header>
             <i 
               className="bi bi-x-lg close-icon" 
               onClick={handleClose}
               style={{color}}></i>
-            <label className="costum-switch my-4" >
-              <input  type="checkbox" onClick={chngeThemeHndler} />
-              <span style={{backgroundColor:color}} className="slider round"></span>
-            </label>
         </Offcanvas.Header>
         <Offcanvas.Body >
 
         {navBarSections.map((sec,idx) => 
-            <div onClick={() =>{onSectionClick(sec.id)}}
+            <div><Link to={"/hash-scroll#" + sec.id}
                 className='my-2 nav-title'
               style={{color}}
               key={sec.id} >
                 {sec.txt}
-            </div>)}
+            </Link></div>)}
+            <div style={{color}} className='mt-5'>{"Contact Me:"}</div>
             <div  className='d-flex container mt-4 ms-0 ps-0' >
               <ContactComponent color={color} />
           </div>
         </Offcanvas.Body>
-      </Offcanvas>
+      </Offcanvas> */}
     </div>
     </section>
   );
