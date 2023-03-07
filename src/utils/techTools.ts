@@ -1,9 +1,8 @@
 export const techTools = {
     js:"JavaScript",
     ts:"TypeScript", 
-    react: "ReactJS",
-    react_ts: "React-TypeScript",
-    angular: "AngularJS",
+    react: "React",
+    angular: "Angular",
     bootstrap: "Bootstrap",
     sass: "SASS",
     html: "HTML5",
