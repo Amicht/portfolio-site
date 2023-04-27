@@ -76,7 +76,7 @@ export const projects:ProjectModel[] = [
     },
     {
         name: "Snake",
-        description: "The classc Snake game",
+        description: "The classic Snake game",
         image: "snake.png",
         git_url: "https://github.com/Amicht/snake-game",
         site_url: "https://amicht.github.io/snake-game/main.html",
@@ -89,7 +89,7 @@ export const projects:ProjectModel[] = [
     },
     {
         name: "Black-Jack",
-        description: "The classc Black-Jack (21) game",
+        description: "The classic Black-Jack (21) game",
         image: "black-jack.png",
         git_url: "https://github.com/Amicht/Black-Jack-21",
         site_url: "https://amicht.github.io/Black-Jack-21/main.html",

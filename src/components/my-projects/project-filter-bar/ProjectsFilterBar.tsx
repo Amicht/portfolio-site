@@ -16,7 +16,7 @@ const ProjectsFilterBar = ({skillWordChangeHndler,activeSkill}:Props) => {
 
     const [skills, setSkills] = React.useState<SkillI[]>([]);
     const initSkills = [
-        techTools.js, techTools.react, techTools.angular, techTools.node, 
+        techTools.react, techTools.angular, techTools.next, 
         techTools.mysql, techTools.mongodb, techTools.ts, techTools.vanila_js, 
     ]
 

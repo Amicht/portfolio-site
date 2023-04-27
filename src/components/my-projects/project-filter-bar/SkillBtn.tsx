@@ -1,5 +1,3 @@
-import React from 'react';
-import { ThemeCtxt } from '../../../context/ThemeCtxt';
 import './skill-btn.scss'
 
 
@@ -11,8 +9,6 @@ interface Props{
 }
 
 const SkillBtn = ({skillName,skillWordChangeHndler,match, isActive}: Props) => {
-
-  const {dark: {backgroundColor,color}} = React.useContext(ThemeCtxt);
 
   return (
     <div 

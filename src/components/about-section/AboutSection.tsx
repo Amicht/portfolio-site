@@ -2,11 +2,13 @@ import React from 'react'
 import { ThemeCtxt } from '../../context/ThemeCtxt';
 import { navBarSections } from '../../utils/sections';
 import './about-section.scss';
+import { techTools } from '../../utils/techTools';
 
 
 const AboutSection = () => {
 
     const {dark: {backgroundColor,color}} = React.useContext(ThemeCtxt);
+    const { node, mysql, mongodb, rest_api, express, js, ts, next, react, angular, bootstrap, html, css, } = techTools;
 
     const titles = {
         whoAmI: "WHO AM I?",
@@ -28,19 +30,18 @@ const AboutSection = () => {
       "As a former artist, I have an eye for design, enthusiasm and I know how to be a good service provider.",
       "I never give up when it comes to problem solving and making sure the job is done the best way possible."
     ]
-
     const techDescription = [
       {
         area: "Frontend",
-        tools: ["JavaScript","TypeScript","ReactJS","AngularJS", "Bootstrap", "HTML5", "CSS3"]
+        tools: [html, css, js, ts, next, react, angular, bootstrap]
       },
       {
         area: "Backend",
-        tools: ["NodeJS", "ExpressJS", "Socket.io", "Rest-api"]
+        tools: [node,express,  rest_api, "Socket.io"]
       },
       {
         area: "Database",
-        tools: ["MySql", "MongoDB", "Firebase"]
+        tools: [mysql, mongodb, "Firebase", "Airtable"]
       }
     ]
     
@@ -55,9 +56,10 @@ const AboutSection = () => {
           <div 
           data-aos="fade-up"
           data-aos-duration="1200" 
-            className=' pt-5 pb-3'>
+            className='potfolio-img-wrapper mt-5 mb-3 mx-auto'>
             <img 
                 className='portfolio-img' 
+                loading='lazy'
                 src={'/images/portfolio-img.png'} 
                 alt={"portfolio-img"} />
           </div>
