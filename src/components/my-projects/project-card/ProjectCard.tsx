@@ -27,6 +27,7 @@ const ProjectCard = ({description, git_url,image,name,site_url,tools}:ProjectMod
             
             <img 
                 className='mx-0' 
+                loading='lazy'
                 src={'/images/' + image} 
                 alt={image + ' image'} />
             

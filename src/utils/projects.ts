@@ -5,6 +5,22 @@ import {techTools}  from './techTools'
 export const projects:ProjectModel[] = [
 
     {
+        name: "Cali-App",
+        description: "A full body training app for the 4 muscle groups, combined with circuit training and calisthenics.",
+        image: "cali-app.png",
+        git_url: "https://github.com/Amicht/cali-workout",
+        site_url: "https://azure-haddock-tie.cyclic.app/",
+        tools: [
+            techTools.js,
+            techTools.ts,
+            techTools.react,
+            techTools.bootstrap,
+            techTools.sass,
+            techTools.html,
+            techTools.css
+        ]
+    },
+    {
         name: "Netflicht",
         description: "End to end Netfix-clone app",
         image: "netflicht.png",
@@ -18,6 +34,23 @@ export const projects:ProjectModel[] = [
             techTools.mongodb,
             techTools.react,
             techTools.bootstrap,
+            techTools.html,
+            techTools.css,
+        ]
+    },
+    {
+        name: "Coffee Connoisseur",
+        description: "Discover coffee shops nearby your location and vote your favourite ones.",
+        image: "Coffee-Connoisseur.png",
+        git_url: "https://github.com/Amicht/discover-coffee-stores",
+        site_url: "https://discover-coffee-stores-amicht.vercel.app/",
+        tools: [
+            techTools.ts,
+            techTools.next,
+            techTools.react,
+            techTools.js,
+            techTools.rest_api,
+            techTools.node,
             techTools.html,
             techTools.css,
         ]
@@ -39,23 +72,6 @@ export const projects:ProjectModel[] = [
             techTools.bootstrap,
             techTools.html,
             techTools.css,
-        ]
-    },
-    {
-        name: "Cali-App",
-        description: "A full body training app for the 4 muscle groups, combined with circuit training and calisthenics.",
-        image: "cali-app.png",
-        git_url: "https://github.com/Amicht/cali-workout",
-        site_url: "https://azure-haddock-tie.cyclic.app/",
-        tools: [
-            techTools.js,
-            techTools.ts,
-            techTools.react,
-            techTools.react_ts,
-            techTools.bootstrap,
-            techTools.sass,
-            techTools.html,
-            techTools.css
         ]
     },
     {
