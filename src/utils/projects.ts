@@ -5,15 +5,16 @@ import {techTools}  from './techTools'
 export const projects:ProjectModel[] = [
 
     {
-        name: "Cali-App",
+        name: "CALI-APP",
         description: "A full body training app for the 4 muscle groups, combined with circuit training and calisthenics.",
         image: "cali-app.png",
-        git_url: "https://github.com/Amicht/cali-workout",
-        site_url: "https://azure-haddock-tie.cyclic.app/",
+        git_url: "https://github.com/Amicht/cali-app",
+        site_url: "https://cali-app-seven.vercel.app/",
         tools: [
             techTools.js,
             techTools.ts,
             techTools.react,
+            techTools.next,
             techTools.bootstrap,
             techTools.sass,
             techTools.html,
