@@ -12,8 +12,8 @@ const ProjectCard = ({description, git_url,image,name,site_url,tools}:ProjectMod
   
     const skills = [tools[0], tools[1], `+${tools.length - 2} more`];
     const urlLinks = [
-        {link: git_url, txt: "code"},
-        {link: site_url, txt: "site"}
+        {link: git_url || '', txt: "code"},
+        {link: site_url || '', txt: "site"}
     ]
 
     

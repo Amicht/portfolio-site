@@ -3,47 +3,33 @@ import { ThemeCtxt } from '../../context/ThemeCtxt';
 import { navBarSections } from '../../utils/sections';
 import './about-section.scss';
 import { techTools } from '../../utils/techTools';
+import { LanguageCtxt } from '../../context/LanguageCtxt';
 
 
 const AboutSection = () => {
 
     const {dark: {backgroundColor,color}} = React.useContext(ThemeCtxt);
+    const langCtxt = React.useContext(LanguageCtxt);
+    const pageTxts = langCtxt.lang.sections.about;
+    const { titles, myStrength, description } = langCtxt.lang.sections.about;
     const { node, mysql, mongodb, rest_api, express, js, ts, next, react, angular, bootstrap, html, css, } = techTools;
 
-    const titles = {
-        whoAmI: "WHO AM I?",
-        techStack: "MY TECH-STACK:",
-        myStrength: "MY STRENGTH:"
-    }
-    const myStrength = [
-      "Passionate programmer",
-      "Highly motivated",
-      "Spend at least 6 hours every day coding and learning",
-      "Love to teach, share knowledge and help others",
-      "Creative mind",
-      "Can-do attitude",
-      "Challenge seeker"
-    ]
-    const description = [
-      "I am a full-stack developer with hands-on experience in E2E development as a freelance and on personal projects.",
-      "I've spend 12 years working as a musician - performing, composing and managing rehearsals.",
-      "As a former artist, I have an eye for design, enthusiasm and I know how to be a good service provider.",
-      "I never give up when it comes to problem solving and making sure the job is done the best way possible."
-    ]
     const techDescription = [
       {
-        area: "Frontend",
+        area: pageTxts.frontend,
         tools: [html, css, js, ts, next, react, angular, bootstrap]
       },
       {
-        area: "Backend",
+        area: pageTxts.backend,
         tools: [node,express,  rest_api, "Socket.io"]
       },
       {
-        area: "Database",
+        area: pageTxts.database,
         tools: [mysql, mongodb, "Firebase", "Airtable"]
       }
     ]
+
+    const textAlignClassName = langCtxt.lang.dir === 'ltr'? 'text-start': 'text-end';
     
   return (
     <section id={navBarSections[1].id} style={{backgroundColor,color}} 
@@ -65,17 +51,17 @@ const AboutSection = () => {
           </div>
           <div  data-aos="fade-up"
               data-aos-duration="1200" >
-              <h2 className='mb-3 mt-5'>{titles.whoAmI}</h2>
-              <div className='col-sm-10 mx-auto text-start'>{description.map((s,idx) => <div key={idx}>{s}</div>)}</div>
+              <h3 className='mb-3 mt-5 fs-1'>{titles.whoAmI}</h3>
+              <div className={`col-sm-10 fs-4 mx-auto ${textAlignClassName}`}>{description.map((s,idx) => <div key={idx}>{s}</div>)}</div>
           </div>
 
           <div data-aos="fade-up"
               data-aos-duration="1200" >
-              <h3 className='mb-3 mt-5'>{titles.techStack}</h3>
-              <div className='col-sm-7 mx-auto text-start'>
+              <h4 className='mb-3 mt-5 fs-2'>{titles.techStack}</h4>
+              <div className={`col-sm-7 fs-4 mx-auto ${textAlignClassName}`}>
                 {techDescription.map((s,idx) => 
                 <div className='my-2' key={idx}>
-                <span className='fs-5 fw-bold text-info'>{s.area}: </span>
+                <span className='fs-4 fw-bold text-info'>{s.area}: </span>
                   {s.tools.join(", ")}
                 </div>)}
               </div>
@@ -83,10 +69,10 @@ const AboutSection = () => {
 
           <div data-aos="fade-up"
               data-aos-duration="1200" >
-              <h3 className='mb-3 mt-5'>{titles.myStrength}</h3>
-              <div className='col-sm-7 mx-auto text-start'>{myStrength.map((s,idx) => 
+              <h4 className='mb-3 mt-5 fs-2'>{titles.myStrength}</h4>
+              <div className={`col-sm-7 fs-4 mx-auto ${textAlignClassName}`}>{myStrength.map((s,idx) => 
                 <div key={idx}>
-                  <i className="fa fa-arrow-right text-info"></i> {s}</div>)}</div>
+                  <i className={`fa fa-arrow-${langCtxt.lang.dir === 'ltr'? 'right': 'left'} text-info`}></i> {s}</div>)}</div>
           </div>
         </div>
 

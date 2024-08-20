@@ -6,15 +6,15 @@ import ProjectsFilterBar from './project-filter-bar/ProjectsFilterBar';
 import './my-projects-section.scss';
 import { navBarSections } from '../../utils/sections';
 import { ThemeCtxt } from '../../context/ThemeCtxt';
+import { LanguageCtxt } from '../../context/LanguageCtxt';
 
 const MyProjects = () => {
 
     const {light: {backgroundColor,color}} = React.useContext(ThemeCtxt);
-    const title = "CHECK OUT SOME OF MY PROJECTS";
-    const allSkills = "All";
+    const {lang: { sections: {projects: {title, allSkills}}}} = React.useContext(LanguageCtxt);
 
     const [myProjects, setMyProjects] = React.useState<ProjectModel[]>(projects);
-    const [activeSkill, setActiveSkill] = React.useState<string>("All");
+    const [activeSkill, setActiveSkill] = React.useState<string>(allSkills);
 
     const SkillWordChangeHndler = (skillWord:string) => {
         setActiveSkill(skillWord);

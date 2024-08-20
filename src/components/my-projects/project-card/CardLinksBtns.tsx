@@ -12,17 +12,22 @@ interface UrlLinkI{
 const CardLinksBtns = ({urlLinks}:Props) => {
   return (
     <div className='row card-links-btns'>
-        {urlLinks.map((url, idx) => 
-            <span className='col'
-                key={url.txt+idx}>
-                <a 
-                    className={`text-info hover-underline-animation`}
-                    href={url.link} 
-                    target="_blank"
-                    rel="noreferrer">
-                        {url.txt} 
-                </a>
-            </span>)}
+        {
+            urlLinks.map((url, idx) => 
+                url.link?
+                <span className='col'
+                    key={url.txt+idx}>
+                    <a 
+                        className={`text-info hover-underline-animation`}
+                        href={url.link} 
+                        target="_blank"
+                        rel="noreferrer">
+                            {url.txt} 
+                    </a>
+                </span>
+                : null
+            )
+        }
     </div>
   )
 }

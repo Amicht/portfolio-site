@@ -2,6 +2,7 @@ import React from 'react'
 import { projects } from '../../../utils/projects';
 import { techTools } from '../../../utils/techTools';
 import SkillBtn from './SkillBtn';
+import { LanguageCtxt } from '../../../context/LanguageCtxt';
 
 interface Props{
     skillWordChangeHndler: (skill:string) => void;
@@ -14,13 +15,14 @@ interface SkillI{
 }
 const ProjectsFilterBar = ({skillWordChangeHndler,activeSkill}:Props) => {
 
+    const {lang: { sections: {projects: {allSkills}}}} = React.useContext(LanguageCtxt);
     const [skills, setSkills] = React.useState<SkillI[]>([]);
     const initSkills = [
         techTools.react, techTools.angular, techTools.next, 
         techTools.mysql, techTools.mongodb, techTools.ts, techTools.vanila_js, 
     ]
 
-    const allOptions = "All";
+    const allOptions = allSkills;
     const getSkillsWithProjectCount = () => {
         const mappedSkills = initSkills.map((t,idx) => {
             return {
@@ -32,7 +34,7 @@ const ProjectsFilterBar = ({skillWordChangeHndler,activeSkill}:Props) => {
         setSkills(mappedSkills);
     }
 
-    React.useEffect(() => { getSkillsWithProjectCount(); },[]);
+    React.useEffect(() => { getSkillsWithProjectCount(); },[allSkills]);
 
   return (
     <div className='row mt-3'>

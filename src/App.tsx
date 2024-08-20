@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/_colors.scss';
@@ -11,15 +11,26 @@ import SkillsSection from './components/skills/SkillsSection';
 import { ThemeCtxt, themes } from './context/ThemeCtxt';
 import OffCanvasNavbar from './components/my-navbar/OffcanvasNavbar';
 import AboutSection from './components/about-section/AboutSection';
+import { LanguageCtxt } from './context/LanguageCtxt';
+import { en } from './locales/en';
+import { he } from './locales/he';
 
 
 function App() {
 
   const [theme, setTheme] = React.useState({dark: themes.light, light:themes.dark});
+  const [lang, setLang] = React.useState(en);
   const [isChecked, setIsChecked] = React.useState(false);
   const [scrollTo, setScrollTo] = React.useState("");
 
-  const aboutRef = React.useRef();
+  const changeLanguage = (requestedLanguage: string) => {
+      const languages = [he, en]
+      const newLang = languages.find(l => l.fullLanguageName === requestedLanguage);
+      if(newLang){
+        setLang(newLang);
+      }
+  }
+
   React.useEffect(() => { AOS.init()},[]);
   
   const changeTheme = () => {
@@ -45,19 +56,27 @@ function App() {
   },[scrollTo])
 
   return (
-    <>
-      <ThemeCtxt.Provider value={theme}>
+    <div dir={lang.dir}>
+      <LanguageCtxt.Provider value={{lang, changeLang:changeLanguage}}>
 
-        <OffCanvasNavbar 
-          chngeThemeHndler={changeTheme}
-          setScrollTo={setScrollTo}/>
-        <IntroSection />
-        <SkillsSection />
-        <AboutSection />
-        <MyProjects />
-        <MyFooter />
-      </ThemeCtxt.Provider>
-    </>
+        <ThemeCtxt.Provider value={theme}>
+
+          <OffCanvasNavbar chngeThemeHndler={changeTheme} setScrollTo={setScrollTo}/>
+
+          <IntroSection />
+
+          <SkillsSection />
+
+          <AboutSection />
+
+          <MyProjects />
+
+          <MyFooter />
+
+        </ThemeCtxt.Provider>
+
+      </LanguageCtxt.Provider>
+    </div>
   );
 }
 
