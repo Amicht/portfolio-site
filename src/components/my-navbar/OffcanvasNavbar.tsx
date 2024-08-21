@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import {  useContext } from 'react';
 import { ThemeCtxt } from '../../context/ThemeCtxt';
 import ContactComponent from '../contact-component/ContactComponent';
 import './costum-switch.scss';
@@ -7,30 +7,20 @@ import { LanguageCtxt } from '../../context/LanguageCtxt';
 
 
 interface Props{
-    chngeThemeHndler: () => void
-    setScrollTo: (value: React.SetStateAction<string>) => void
+  changeThemeHandler: () => void
 }
 
 
-const OffCanvasNavbar = ({chngeThemeHndler,setScrollTo}:Props) => {
-    const langCtxt = React.useContext(LanguageCtxt);
-    const languages = {
-      en: "English",
-      he: "עברית"
-    }
-    const langToChange = langCtxt.lang.lang === 'en'? languages.he: languages.en;
-
-    const {dark: {backgroundColor,color}} = React.useContext(ThemeCtxt);
-    const [show, setShow] = useState(false);
+const OffCanvasNavbar = ({changeThemeHandler }:Props) => {
     
+  const langCtxt = useContext(LanguageCtxt);
+  const languages = {
+    en: "English",
+    he: "עברית"
+  }
+  const langToChange = langCtxt.lang.lang === 'en'? languages.he: languages.en;
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => {setShow(true)};
-
-    const onSectionClick = (sectionId:string) => {
-      setScrollTo(sectionId);
-      setTimeout(() => handleClose(), 200);
-    }
+  const {dark: {backgroundColor,color}} = useContext(ThemeCtxt);
 
   return (
     <section dir={'ltr'} style={{backgroundColor, color}} className="py-1 sticky-top">
@@ -40,7 +30,7 @@ const OffCanvasNavbar = ({chngeThemeHndler,setScrollTo}:Props) => {
         </div>
         <button style={{backgroundColor: color, color: backgroundColor }} className='btn btn-outline rounded px-2 mx-2' onClick={() => langCtxt.changeLang(langToChange)}>{langToChange}</button>
         <label className="costum-switch my-2 px-4" >
-          <input type="checkbox" onClick={chngeThemeHndler} />
+          <input type="checkbox" onClick={changeThemeHandler} />
           <span style={{backgroundColor:color}} className="slider round"></span>
         </label>
       </div>

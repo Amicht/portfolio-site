@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useEffect } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/_colors.scss';
@@ -8,60 +8,29 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import IntroSection from './components/intro-section/IntroSection';
 import SkillsSection from './components/skills/SkillsSection';
-import { ThemeCtxt, themes } from './context/ThemeCtxt';
 import OffCanvasNavbar from './components/my-navbar/OffcanvasNavbar';
 import AboutSection from './components/about-section/AboutSection';
+import { ThemeCtxt } from './context/ThemeCtxt';
 import { LanguageCtxt } from './context/LanguageCtxt';
-import { en } from './locales/en';
-import { he } from './locales/he';
+import useLanguageService from './custom-hooks/useLanguageService';
+import useThemeService from './custom-hooks/useThemeService';
 
 
 function App() {
 
-  const [theme, setTheme] = React.useState({dark: themes.light, light:themes.dark});
-  const [lang, setLang] = React.useState(en);
-  const [isChecked, setIsChecked] = React.useState(false);
-  const [scrollTo, setScrollTo] = React.useState("");
+  const { changeLanguage, lang } = useLanguageService();
+  const { changeTheme, theme } = useThemeService();
 
-  const changeLanguage = (requestedLanguage: string) => {
-      const languages = [he, en]
-      const newLang = languages.find(l => l.fullLanguageName === requestedLanguage);
-      if(newLang){
-        setLang(newLang);
-      }
-  }
-
-  React.useEffect(() => { AOS.init()},[]);
-  
-  const changeTheme = () => {
-    if(isChecked) {
-      setTheme({dark: themes.light, light:themes.dark})
-    }
-    else{
-      setTheme(themes);
-    }
-    setIsChecked(!isChecked)
-  }
-
-  const handleClickScroll = (sectionId:string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView();
-    }
-  };
-
-  React.useEffect(() => {
-    if(!!scrollTo){ handleClickScroll(scrollTo); setScrollTo("") }
-      
-  },[scrollTo])
+  useEffect(() => { AOS.init()},[]);
 
   return (
     <div dir={lang.dir}>
+
       <LanguageCtxt.Provider value={{lang, changeLang:changeLanguage}}>
 
         <ThemeCtxt.Provider value={theme}>
 
-          <OffCanvasNavbar chngeThemeHndler={changeTheme} setScrollTo={setScrollTo}/>
+          <OffCanvasNavbar changeThemeHandler={changeTheme}/>
 
           <IntroSection />
 
@@ -76,6 +45,7 @@ function App() {
         </ThemeCtxt.Provider>
 
       </LanguageCtxt.Provider>
+      
     </div>
   );
 }

@@ -9,9 +9,8 @@ import { LanguageCtxt } from '../../context/LanguageCtxt';
 const IntroSection = () => {
 
   const theme = React.useContext(ThemeCtxt);
-  const {dark: {backgroundColor,color}} = theme;
-  const isBgDark = theme.dark.isBgDark; 
   const langCtxt = React.useContext(LanguageCtxt);
+  const {dark: {backgroundColor,color, isBgDark}} = theme;
   const sectionTxts = langCtxt.lang.sections.intro;
   const { title, subtitle, myTechStack } = sectionTxts;
   const strings = Object.values(techTools);
