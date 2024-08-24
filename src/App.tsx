@@ -14,6 +14,7 @@ import { ThemeCtxt } from './context/ThemeCtxt';
 import { LanguageCtxt } from './context/LanguageCtxt';
 import useLanguageService from './custom-hooks/useLanguageService';
 import useThemeService from './custom-hooks/useThemeService';
+import { LogoAnimationPage } from './components/Logo-animation/LogoAnimationPage';
 
 
 function App() {
@@ -25,6 +26,8 @@ function App() {
 
   return (
     <div dir={lang.dir}>
+
+      <LogoAnimationPage />
 
       <LanguageCtxt.Provider value={{lang, changeLang:changeLanguage}}>
 

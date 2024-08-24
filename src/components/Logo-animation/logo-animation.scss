@@ -1,0 +1,233 @@
+$text-animation-color: white;
+$darker-text-animation-color: rgb(215, 215, 215);
+//$animation-background-color: black;
+
+@keyframes hideText{
+    from{
+        max-width: 600px;
+    }
+    to{
+        max-width: 0;
+    }
+}
+
+@keyframes hideVerticalLine{
+    from{
+        max-height: 100%;
+        left: 12px;
+    }
+    to{
+        max-height: 0;
+        left: 0;
+    }
+}
+
+@keyframes extendedLineToFullScreen{
+    0%{
+        width: 10px;
+        height: 30px;
+        opacity: 1;
+        overflow: hidden;
+    }
+    50%{
+        height: 130vh;
+        opacity: 0.5;
+    }
+    100%{
+        width: 100vw;
+        height: 130vh;
+        opacity: 0;
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+.logo-animation-container{
+    position: fixed;
+    background-color: rgb(22, 5, 89);
+    top: 0;
+    left: 0;
+    z-index: 1021;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20vh;
+}
+
+.logo-animation-container .logo-text-wrapper{
+    direction: ltr;
+    display: flex;
+    align-items: center;
+}
+
+.logo-animation-container .first-letter{
+    position: relative;
+    width: 25px;
+    height:40px;
+    transform: rotate(12deg);
+}
+
+.logo-animation-container .letter-left-column{
+    z-index: 3;
+    position: absolute;
+    width: 10px;
+    box-shadow: 0 0 8px $darker-text-animation-color;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: $text-animation-color;
+}
+
+.logo-animation-container .letter-right{
+    z-index: 2;
+    position: absolute;
+    width: 10px;
+    box-shadow: 0 0 8px $darker-text-animation-color;
+    height: 100%;
+    left: 14px;
+    top: -3px;
+    background-color: $text-animation-color;
+    transform: rotate(156deg);
+}
+
+.logo-animation-container .letter-center{
+    z-index: 1;
+    position: absolute;
+    width: 20px;
+    text-align: center;
+    height: 20%;
+    left: 2px;
+    top: 50%;
+    background-color: $text-animation-color;
+    transform: rotate(168deg);
+}
+
+.logo-animation-container .full-name{
+    height: 40px;
+    font-size: 50px;
+    line-height: 30px;
+    letter-spacing: 2px;
+    max-width: 300px;
+    color: $text-animation-color;
+    font-weight: 700;
+    overflow: hidden;
+    padding-left: 5px;
+
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1.5s;
+    animation-name: hideText;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normaal;
+}
+
+.logo-animation-container .first-letter-animation.first-letter, .logo-animation-container .first-letter-animation .letter-left-column{
+
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1.25s;
+    animation-name: extendedLineToFullScreen;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normaal;
+}
+
+.logo-animation-container .first-letter-animation .letter-right {
+
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-name: hideVerticalLine;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normaal;
+}
+
+.logo-animation-container .first-letter-animation .letter-center {
+
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-name: hideText;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-timeline: auto;
+    animation-range-start: normal;
+    animation-range-end: normaal;
+}
+
+.spinner-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.spinner-wrapper .spinner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 3px solid $text-animation-color;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 20vh;
+    animation: rotation 1s linear infinite;
+    opacity: 0;
+}
+
+.spinner-wrapper .spinner.visible{
+    opacity: 1;
+}
+
+@media screen and (min-width: 800px) {
+
+    .logo-animation-container .full-name{
+        font-size: 80px;
+        height: 80px;
+        line-height: 65px;
+        max-width: fit-content;
+    }
+
+    .logo-animation-container .first-letter{
+        position: relative;
+        width: 30px;
+        height:50px;
+    }
+
+    .logo-animation-container .letter-left-column{
+        width: 12px;
+        box-shadow: 0 0 16px $darker-text-animation-color;
+    }
+}
