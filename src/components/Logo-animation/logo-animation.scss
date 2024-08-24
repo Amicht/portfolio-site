@@ -51,7 +51,6 @@ $darker-text-animation-color: rgb(215, 215, 215);
 
 .logo-animation-container{
     position: fixed;
-    background-color: rgb(22, 5, 89);
     top: 0;
     left: 0;
     z-index: 1021;
@@ -114,7 +113,7 @@ $darker-text-animation-color: rgb(215, 215, 215);
 
 .logo-animation-container .full-name{
     height: 40px;
-    font-size: 50px;
+    font-size: 44px;
     line-height: 30px;
     letter-spacing: 2px;
     max-width: 300px;
@@ -153,7 +152,7 @@ $darker-text-animation-color: rgb(215, 215, 215);
 
 .logo-animation-container .first-letter-animation .letter-right {
 
-    animation-duration: .5s;
+    animation-duration: .25s;
     animation-timing-function: ease-in-out;
     animation-delay: 1s;
     animation-name: hideVerticalLine;

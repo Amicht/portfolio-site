@@ -27,7 +27,7 @@ function App() {
   return (
     <div dir={lang.dir}>
 
-      <LogoAnimationPage />
+      {/* <LogoAnimationPage bgColor={theme.dark.backgroundColor}/> */}
 
       <LanguageCtxt.Provider value={{lang, changeLang:changeLanguage}}>
 

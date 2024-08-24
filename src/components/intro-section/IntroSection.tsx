@@ -46,7 +46,7 @@ const IntroSection = () => {
               data-aos="fade-left"  
               data-aos-duration="1800"
               className='mt-2 text-center'>{subtitle}</h2>
-          <p className='mt-5 text-center fs-2 fw-bold'>
+          <p dir='ltr' className='mt-5 text-center fs-2 fw-bold'>
              {myTechStack + "{ "} 
              <Typed 
               className='fs-1 typed-txt'

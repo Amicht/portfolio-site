@@ -1,15 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 import './logo-animation.scss'
 
-export const LogoAnimationPage = () => {
+export const LogoAnimationPage = ({bgColor}: {bgColor: string}) => {
 
     const [isLoading, setIsLoading] = useState(false);
     // const navigate = useNavigate();
     const [isEndAnimationStart, setIsEndAnimationStart] = useState(false);
     const [isAnimationEnd, setIsAnimationEnd] = useState(false);
     const isFirstRenderRef = useRef(true);
-    const TEXT = 'MICHT';
-    const firstLetter = 'A';
+    const LogoName = 'AMICHT'.slice(1,6);
 
     useEffect(() => { 
         // Prevent request on 2nd render
@@ -25,10 +24,8 @@ export const LogoAnimationPage = () => {
         
         // For mock - set 2 seconds loading
         const timeToFetchDataInMiliSec = 1500;
-        const endAnimationDurationInMilisecnds = 3500;
         const animationDelay = 500;
         const totalAnimationTimeInCesconds = 6000;
-        // Fetch request goes here with async / await
 
         startFinalAnimation(timeToFetchDataInMiliSec);
 
@@ -51,7 +48,7 @@ export const LogoAnimationPage = () => {
     const removeFromScreenAfterAnimationEnd = (time: number) => setTimeout(() => { setIsAnimationEnd(true) }, time);
 
     return (
-        <div className={`logo-animation-container ${isAnimationEnd? 'd-none': ''}`}>
+        <div style={{backgroundColor: bgColor}} className={`logo-animation-container ${isAnimationEnd? 'd-none': ''}`}>
 
             <div className='logo-text-wrapper'>
                 <div className={`first-letter ${isEndAnimationStart? 'first-letter-animation': ''}`}>
@@ -59,7 +56,7 @@ export const LogoAnimationPage = () => {
                     <div className='letter-right'></div>
                     <div className='letter-center'></div>
                 </div>
-                <div className='full-name'>{TEXT}</div>
+                <div className='full-name'>{LogoName}</div>
             </div>
 
             <div className='spinner-wrapper'>
